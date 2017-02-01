@@ -10,17 +10,14 @@ package loops;
  * @author User
  */
 
-public class IfElse {
+public class LoopsSmall {
 
 	public static void main(String[] args) {
 
-		int i = 8;
-		if (i == 7){
-			System.out.println("It's a match!");
-		}else{
-			System.out.println("Not a match!");
+		for (int countOne = 0; countOne < 10; countOne++) {
+			System.out.println("Position: " + countOne);
+
 		}
-		
 
 	}
 
