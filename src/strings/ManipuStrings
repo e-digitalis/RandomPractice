@@ -1,0 +1,17 @@
+package StringManipulation;
+
+public class ManipuStrings {
+
+	public static void main(String[] args) {
+		String test = "hello world    ";
+		
+		System.out.println(test.charAt(7));
+		System.out.println(test.length());
+		System.out.println(test.substring(5));
+		System.out.println(test.trim());
+		String newTest = test.trim();
+		System.out.println(newTest + "hey there");
+
+	}
+
+}
