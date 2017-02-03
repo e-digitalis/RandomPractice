@@ -1,0 +1,62 @@
+package bankRelated;
+
+import java.util.Scanner;
+
+public class SimpleInterest {
+
+	public static Scanner myScanner = new Scanner(System.in);
+	public static String clear;
+	public static double interest = 0.023;
+	
+	public static void main(String[] args) {
+		SimpleInterest si = new SimpleInterest(); 
+		si.calculateInterest();
+		
+	}
+	
+	public void calculateInterest(){
+		int loanAmount;
+		int numberOfMonths;
+		double interestToPay;
+		double totalAmountToPay;
+		
+		System.out.println("How much money do you want to borrow? Please enter the amount in €:");
+		loanAmount = myScanner.nextInt();
+		clear = myScanner.nextLine();
+		
+		System.out.println("How many months do you want to borrow the money for?");
+		numberOfMonths = myScanner.nextInt();
+		clear = myScanner.nextLine();
+		
+		System.out.println("Amount: " + loanAmount + " €\nMonths: " + numberOfMonths);
+		
+		interestToPay = loanAmount * interest * numberOfMonths;
+		System.out.println("Interest to pay: " + interestToPay + " €");	
+		
+		totalAmountToPay = loanAmount + interestToPay;
+		System.out.println("Total amount to be paid: "+ totalAmountToPay + " €");
+		
+	}
+
+}
+
+/*#Task
+Create a Java program that calculates the interest payable on a loan after n months.
+This particular bank has an interest rate of 2.3% per month.
+The user will enter the loan amount, and how many months he/she will be paying the loan off.
+The program will then calculate the total repayment costs based on n months + the original loan amount for the specified rate of interest.
+Good luck :) 
+
+
+Formula #1 
+I=Prn
+Interest (I) = Principal (P) times Rate Per Period (r) times Number of Periods (n)
+Divide an annual rate by 12 to get (r) if the Period is a month.
+
+Formula #2 
+I=Prt 
+Interest (I) = Principal (P) times Annual Rate (r) times Time in Years (t)
+The time can be specified as a fraction of a year (e.g. 5 months would be 5/12 years).
+
+https://www.vertex42.com/Calculators/simple-interest.html
+*/
