@@ -1,0 +1,49 @@
+package StringManipulation;
+
+public class EmailToStrings {
+
+	public static void main(String[] args) {
+
+	
+
+	}
+
+	public static void indexOfSubString() {
+		String email = "ironman2000@gmail.com";
+		String sub1 = email.substring(0, email.indexOf('@'));
+		String sub2 = email.substring(email.indexOf('@') + 1);
+		System.out.println(sub1);
+		System.out.println(sub2);
+	}
+	
+	public static void splitting(){
+		String email = "ironman2000@gmail.com";
+		String[] text = email.split("@");
+		for (String e : text) {
+			System.out.println(e);
+		}
+	}
+	
+
+	public static void indexExtra() {
+		String email = "ironman2000@gmail.com";
+		int index = email.indexOf('@');
+		System.out.println(index);
+		String sub1 = email.substring(0, email.indexOf('@'));
+		String sub2 = email.substring(email.indexOf('@') + 1);
+		System.out.println(sub1);
+		System.out.println(sub2);
+	}
+
+}
+
+// #JavaTask
+// Write some code to split an email address into 2 Strings, username and
+// domain: for example:
+// Input:
+// String email = "ironman2000@gmail.com";
+// Output:
+// String username = "ironman2000"
+// String domain = "gmail.com";
+// You are NOT allowed to use the String.split method, loops or recursion.
+// Good luck
