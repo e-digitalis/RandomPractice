@@ -1,0 +1,124 @@
+ package StringManipulation;
+
+import java.util.Scanner;
+
+public class AddingStrings {
+
+	static Scanner myScanner = new Scanner(System.in);
+
+	public static void main(String[] args) {
+
+		// addString("5,10,15,25,100,1000");
+		//addStringDean("5,10,15,25,100,1000");
+		indexOf();
+
+		myScanner.close();
+	}
+
+
+
+	public static int indexOf() {
+
+		String numberString = "5,10,15,25,100,1000";
+		String nextCase = ",";
+		int indexBeginning = 0;
+		int indexEnd = 0;
+		int indexEndNew = 0;
+		int total = 5;
+		String  subStr = null;
+		int parsedString = 0;
+
+		// start by setting the indexBeginning to the value of the first indexOf ","
+		// loop as long as indexBeginning is larger than 0 (because it return -1 if the string is not found
+		// set indexBeginning to the next index of "," (which is accomplished by adding one to the particular index of indexBeginning, so it finds the next one
+		for (indexBeginning = numberString.indexOf(nextCase); indexBeginning >= 0; indexBeginning = numberString.indexOf(nextCase, indexBeginning + 1)) {
+			//set indexEnd to the next occurrence of ",", after the one which currently is indexBeginning
+			indexEnd = numberString.indexOf(nextCase, indexBeginning + 1);
+			
+			if(indexEnd > 0){
+				indexEndNew = indexEnd;
+				subStr = numberString.substring((indexBeginning + 1), (indexEndNew));
+			} else {
+				indexEndNew = numberString.length();
+				subStr = numberString.substring((indexBeginning + 1), (indexEndNew));
+			}
+			
+			System.out.println("IB: " + indexBeginning);
+			System.out.println("IE: " + indexEnd);
+			System.out.println("IEN: " + indexEndNew);
+			System.out.println(subStr);
+			parsedString = Integer.parseInt(subStr);
+			System.out.println(parsedString);
+			total += parsedString;
+			System.out.println("Total is: " + total);
+		}
+		return total;
+	}
+
+	public static int addString(String str) {
+		int total = 0;
+		System.out.println(str); // to check it received properly
+
+		String nextCase = ",";
+		for (int index = str.indexOf(nextCase); index >= 0; index = str.indexOf(nextCase, index + 1)) {
+			System.out.println(index);
+			total += myScanner.nextInt();
+			// here you will get all the index of ","
+		}
+		System.out.println("Printing the sum: " + total);
+		return total;
+	}
+
+	public static int nextCase(String str) {
+		int total = 0;
+		System.out.println(str); // to check it received properly
+
+		String nextCase = ",";
+		for (int index = str.indexOf(nextCase); index >= 0; index = str.indexOf(nextCase, index + 1)) {
+			System.out.println(index);
+			// here you will get all the index of ","
+		}
+
+		return total;
+	}
+	
+	public static int addStringDean(String str) {
+		int total = 0;
+		for (String splitstr : str.split(",")) {
+			total += Integer.parseInt(splitstr);
+		}
+		System.out.println("Printing the sum: " + total);
+		return total;
+	}
+
+}
+
+// #Task
+// Same as previous task (add int array), but this time we will add the contents
+// of a String of numbers.
+// Use the following String:
+// String numberString = "5,10,15,25,100,1000";
+// Your method will look like:
+// public static int addString(String str){
+//// Code
+// return total;
+// }
+
+// String input = "2.1 20 Something true";
+// Scanner s = new Scanner(input);
+// float f = s.nextFloat();
+// int i = s.nextInt();
+// String str = s.next(); // next() doesn't parse, you automatically get a
+// string
+// boolean b = s.nextBoolean();
+
+// String[] parsedText = "2.1 20 Something true".split(delimiter)
+//
+// try {
+// firstVal = new Float(parsedText[0])
+// }
+// catch (NumberFormatException e) {
+// throw new RuntimeException("Bad data [0th position in data string], cannot
+// read[{$parsedData[0]}], cannot convert to float")
+// }
+// ...
