@@ -1,0 +1,31 @@
+package StringManipulation;
+
+import java.util.Scanner;
+
+public class ScannerName {
+
+	static Scanner scan = new Scanner(System.in);
+	public String name;
+	
+	  public String inputName(){
+	        System.out.println("Well hello. Please enter your name:");
+	        name = scan.nextLine();
+	    return name;
+	    }
+	  
+	  public void outputName(String name){
+		  System.out.println(name);
+	  }
+	
+	public static void main(String[] args) {
+		
+		ScannerName n = new ScannerName();
+		
+		n.inputName();
+		n.outputName("Thank you. You entered: " + n.name);
+
+		
+		scan.close();
+	}
+
+}
