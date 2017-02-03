@@ -1,0 +1,21 @@
+package StringManipulation;
+
+public class AddingStringsSplit {
+	
+	public static void main(String[] args) {
+		String numberString = "5,10,15,25,100,1000";
+		splitting(numberString);
+	}
+	
+	public static int splitting(String s){
+		String[] starray = s.split(",");
+		int sum = 0;
+		for (String str : starray){
+		System.out.println(str);
+			sum += Integer.parseInt(str);
+		}
+		System.out.println("Sum = " + sum);
+		return sum;
+	}
+	
+}
