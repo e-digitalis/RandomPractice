@@ -1,0 +1,41 @@
+package StringManipulation;
+
+public class MiddleLettersEvenWord {
+	
+	boolean checked;
+	int length;
+	int sub1;
+	int sub2;
+	String str1;
+	String str2;
+
+	public static void main(String[] args) {
+
+		MiddleLettersEvenWord m = new MiddleLettersEvenWord();
+		m.letterFinder("purple");
+		m.letterFinder("rain");
+		m.letterFinder("purplye");
+	}
+
+	public void letterFinder(String word){
+		evenChecker(word);
+		if (checked){
+			sub1 = length/2;
+			str1 = word.substring(sub1 - 1, sub1);
+			str2 = word.substring(sub1, sub1 + 1);
+			System.out.println("First character is " + str1 + " and the second character is " + str2 + ".");
+		} else {
+			System.out.println("The word does not have an even number of letters.");
+		}
+		
+	}
+	
+	public void evenChecker(String word){
+		length = word.length();
+		if ((length % 2) == 0){
+			checked = true;
+		} else {
+			checked = false;
+		}	
+	}	
+}
