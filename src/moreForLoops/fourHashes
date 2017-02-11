@@ -1,0 +1,53 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package moreForLoops;
+
+/**
+ *
+ * @author Elisabeth
+ */
+public class fourHashes {
+
+    public static void main(String[] args) {
+        System.out.println("_____________ fourHs");
+        fourHs();
+        System.out.println("_____________ withString");
+        withString();
+        System.out.println("_____________ fourCharsRegularFor");
+        fourCharsRegularFor();
+        System.out.println("_____________ ternaryFour");
+        ternaryFour();
+    }
+
+    public static void ternaryFour() {
+        for (int i = 1; i <= 20; i++) {
+            System.out.print(i % 5 == 0 ? "\n" : "# ");
+        }
+    }
+
+    public static void fourCharsRegularFor() {
+        int i;
+        char[] c = {'\n', '#', '#', '#', '#'};
+        for (i = 1; i <= 20; i++) {
+            System.out.print(c[i % 5]);
+        }
+    }
+
+    public static void fourHs() {
+        for (int counter = 1; counter <= 4; counter++) {
+            System.out.println("# # # #");
+        }
+    }
+
+    public static void withString() {
+        String s = "# # # #";
+        for (int counter = 1; counter <= 4; counter++) {
+            System.out.println(s);
+        }
+
+    }
+
+}
